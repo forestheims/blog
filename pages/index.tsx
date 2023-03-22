@@ -1,97 +1,58 @@
+import Container from '../components/container'
+import MoreStories from '../components/more-stories'
+import HeroPost from '../components/hero-post'
+import Intro from '../components/intro'
+import Layout from '../components/layout'
+import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { CMS_NAME } from '../lib/constants'
+import Post from '../interfaces/post'
+import Header from '../components/header'
 
-const inter = Inter({ subsets: ['latin'] })
+type Props = {
+  allPosts: Post[]
+}
 
-export default function Home() {
+export default function Index({ allPosts }: Props) {
+  const heroPost = allPosts[0]
+  const morePosts = allPosts.slice(1)
   return (
     <>
-      <Head>
-        <title>A DevSecOps Web Log</title>
-        <meta name="description" content="A DevSecOps Web Log" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-          A DevSecOps Web Log built with&nbsp;
-            <code className={styles.code}>Next.js</code>
-          </p>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/pony.png"
-            alt="Artistic rendering of a network"
-            width={180}
-            height={180}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://www.linkedin.com/in/forestheims/"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              LinkedIn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Connect with or contact me here.
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/forestheims"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              GitHub <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              forestheims has 114 repositories available.
-            </p>
-          </a>
-
-          <a
-            href="https://forestheims.net/resume/2023-resume-2.3.pdf"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Resume <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              The resume of a job seeking software developer.
-            </p>
-          </a>
-          
-          <a
-            href="https://forestheims.net"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Portfolio <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              A personal portfolio website deployed on Netlify and Heroku built on the PERN stack.
-            </p>
-          </a>
-
-        </div>
-      </main>
+      <Layout>
+        <Head>
+          <title>A Developers Web Log</title>
+        </Head>
+        <Container>
+          <Header />
+          <Intro />
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
+              date={heroPost.date}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </Container>
+      </Layout>
     </>
   )
+}
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+  ])
+
+  return {
+    props: { allPosts },
+  }
 }
