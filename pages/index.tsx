@@ -20,7 +20,7 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>A Developers Web Log</title>
+          <title>Forest Heims | A Developers Web Log</title>
         </Head>
         <Container>
           <Header />

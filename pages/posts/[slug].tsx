@@ -20,7 +20,7 @@ type Props = {
 
 export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter()
-  const title = `${post.title} | A Developers Web Log`
+  const title = `${post.title} | Forest Heims | A Developers Web Log`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
