@@ -28,7 +28,7 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A DevSecOps Web Log.`}
+        content={`A blog written by Forest Heims`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>

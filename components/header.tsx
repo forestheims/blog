@@ -7,7 +7,7 @@ const Header = () => {
       </a>
     </h2>
     <h2 className="text-2xl md:text-2xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <a href="https://forestheims.dev/" className="hover:underline">
+      <a href="/" className="hover:underline">
         Blog
       </a>
     </h2>
