@@ -7,7 +7,7 @@ const Intro = () => {
       Turning Towards.
       </h1>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A web log paying attention to the problems this world needs solutions for.
+        A personal blog space where I share my mental explorations and the feelings that follow.
       </h4>
     </section>
   )
