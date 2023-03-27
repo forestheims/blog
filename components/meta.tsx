@@ -32,7 +32,7 @@ const Meta = () => {
         content={`A blog written by Forest Heims`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
-      <Script  async defer src="https://analytics.umami.is/script.js" data-website-id="b7aeb8aa-fce3-4630-8c06-69b6d4a3a2c6" />
+      <Script async defer data-website-id={process.env.DATA_WEBSITE_ID} src={process.env.UMAMI_SRC} />
     </Head>
   )
 }
