@@ -2,7 +2,7 @@
 title: "Open Source Web Development: This Blog and Web Analytics with Next.js and Umami"
 excerpt: "How I set up this blog, as well as Umami analytics for all of my websites."
 coverImage: "/assets/blog/hello-world/13.webp"
-date: "2023-04-02T9:57:07.322Z"
+date: "2023-04-02T09:57:07.322Z"
 author:
   name: Forest Heims
   picture: "/assets/blog/authors/foxie.png"
