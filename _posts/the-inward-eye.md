@@ -1,6 +1,6 @@
 ---
-title: "Happy Spring"
-excerpt: "A Springy poem that will hold as a placeholder for an actual blog entry."
+title: "The Inward Eye"
+excerpt: "My personal analysis of a poem by William Wordsworth."
 coverImage: "/assets/blog/preview/spring.PNG"
 date: "2023-03-21T11:58:07.322Z"
 author:
@@ -10,7 +10,9 @@ ogImage:
   url: "/assets/blog/preview/spring.PNG"
 ---
 
-## The Daffodils
+## I Wandered Lonely as a Cloud
+
+### _also known as 'Daffodils'_
 
 ### - William Wordsworth, 1770 – 1850
 
@@ -41,3 +43,5 @@ They flash upon that inward eye\
 Which is the bliss of solitude;\
 And then my heart with pleasure fills,\
 And dances with the daffodils.
+
+## The Inward Eye
